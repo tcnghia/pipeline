@@ -63,6 +63,7 @@ func NewController(opts *pipeline.Options, clock clock.PassiveClock) func(contex
 			PipelineClientSet: pipelineclientset,
 			Images:            opts.Images,
 			Clock:             clock,
+			podLister:         podInformer.Lister(),
 			taskRunLister:     taskRunInformer.Lister(),
 			resourceLister:    resourceInformer.Lister(),
 			limitrangeLister:  limitrangeInformer.Lister(),
